@@ -23,13 +23,13 @@ const Header = () => {
 
             <div 
               className={`flex flex-col items-center md:gap-4 md:flex-row ml-auto absolute 
-                          md:static top-16 left-0 z-50 bg-green-900 md:bg-transparent 
-                          w-full md:w-auto ${show ? '' : 'hidden md:flex'}`
+                md:static top-16 left-0 z-50 bg-green-900 md:bg-transparent 
+                w-full md:w-auto ${show ? '' : 'hidden md:flex'}`
             }>
                 <CustomLink className='w-full py-2 px-3 md:px-0 md:py-0 md:w-auto' to="/">Home</CustomLink>
                 <CustomLink className='w-full py-2 px-3 md:px-0 md:py-0 md:w-auto' to="/about">About</CustomLink>
                 {user 
-                  ? <button onClick={() => signOut(auth)} className='text-red-500 font-bold text-xl'>Logout</button>
+                  ? <button onClick={() => signOut(auth)} className='text-red-500 font-bold text-xl w-full text-left py-2 px-3 md:px-0 md:py-0 md:w-auto'>Logout</button>
                   : <CustomLink className='w-full py-2 px-3 md:px-0 md:py-0 md:w-auto' to="/login">Login</CustomLink>
                 }
 
