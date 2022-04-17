@@ -1,0 +1,21 @@
+import React from 'react'
+import Button from '../../components/Button/Button'
+import { BiCheck } from 'react-icons/bi'
+
+const Service = ({ service }) => {
+  const { id, name, description, features, price, icon} = service
+  return (
+    <div className='p-4 bg-green-700 rounded-md relative sm:last:col-span-2 md:last:col-span-1'>
+      <span className='absolute top-5 right-5 text-5xl'>{icon}</span>
+      <h1 className='text-5xl font-bold text-pink-100 mb-10'>{name}</h1>
+
+      <ul>
+        {features.map((feature, index) => <li className='font-semibold text-green-300 flex  gap-1 items-center -ml-1' key={index}><BiCheck className='text-2xl' />{feature}</li>)}
+      </ul>
+
+      <Button className='w-full bg-green-800 hover:bg-green-900 mt-5 text-green-100 rounded-xl'>Order Now</Button>
+    </div>
+  )
+}
+
+export default Service
