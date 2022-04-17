@@ -1,10 +1,12 @@
 import React from 'react'
 
-const Profile = (props) => {
-  console.log(props.user)
+const Profile = ({ user }) => {
+  const { photoURL, displayName } = user
+
   return (
-    <div className='w-9 h-9 hidden md:block'>
-      <img className='w-full h-full object-cover rounded-full' src={props.user.photoURL} alt="Profile" referrerPolicy='no-referrer' />
+    <div className='hidden md:flex items-center gap-2 bg-green-300 p-1 rounded-full'>
+      {displayName && <span className='font-bold text-lg pl-3'>{displayName}</span>}
+      <img className='w-9 h-9 object-cover rounded-full' src={photoURL || '/images/user.png'} alt="Profile" referrerPolicy='no-referrer' />
     </div>
   )
 }
