@@ -10,7 +10,7 @@ const Header = () => {
                 <img src="/images/logo.png" alt="Wildie Logo" />
             </div>
 
-            <div className='flex gap-4'>
+            <div className='flex gap-4 ml-auto'>
                 <CustomLink to="/">Home</CustomLink>
                 <CustomLink to="/about">About</CustomLink>
                 <CustomLink to="/contact">Conact Us</CustomLink>

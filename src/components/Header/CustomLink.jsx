@@ -6,7 +6,7 @@ const CustomLink = ({ children, to, ...props }) => {
 
   return (
     <Link
-      className={`text-green-500 hover:text-green-600 text-xl ${match ? 'text-green-600 font-bold' : 'font-semibold'}`}
+      className={`text-green-400 hover:text-green-700 text-xl ${match ? 'text-green-700 font-bold' : 'font-semibold'}`}
       to={to}
       {...props}
     >
