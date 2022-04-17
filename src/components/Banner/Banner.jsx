@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../Button/Button'
 import Container from '../Layout/Container'
 
 const Banner = () => {
@@ -10,6 +11,9 @@ const Banner = () => {
           <p className='text-xl text-green-100 mt-2'>
             Capture professional wild life photos to make your moments better. Want yours photos to stand out? Don't hesitate to contact us.
           </p>
+          <div className='mt-2'>
+            <Button className='text-base bg-green-900 text-green-50 rounded-lg'>Contact Us</Button>
+          </div>
         </div>
 
         <div className='pt-5 overflow-hidden flex justify-end'>
