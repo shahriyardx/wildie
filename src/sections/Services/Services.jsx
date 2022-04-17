@@ -5,7 +5,7 @@ import Service from './Service'
 
 const Services = () => {
   const services = useServices()
-  console.log(services)
+  
   return (
     <Container className='py-10'>
       <h1 className='text-5xl text-green-700 mb-10 font-bold  text-center'>Services</h1>
