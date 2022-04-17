@@ -6,8 +6,8 @@ import Button from '../../components/Button/Button';
 const Footer = () => {
   return (
     <div className='bg-black'>
-      <Container className='py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10'>
-        <div className='sm:col-span-2 md:col-span-1 text-center md:text-left'>
+      <Container className='py-10 md:py-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-5'>
+        <div className='col-span-1 sm:col-span-2 text-center md:text-left'>
           <div className='flex justify-center md:justify-start'>
             <LazyLoadImage src="/images/logo.png" alt="" />
           </div>
