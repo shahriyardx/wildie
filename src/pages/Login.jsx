@@ -4,15 +4,19 @@ import Container from '../components/Layout/Container'
 import Page from '../components/Layout/Page'
 import useAuth from '../firebase/useAuth'
 import { ImSpinner2 } from 'react-icons/im'
-
 import { useSignInWithGoogle, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth'
 
 import { FcGoogle } from 'react-icons/fc'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  const from = location.state?.from?.pathname || "/"
 
   const auth = useAuth()
   const [signInWithGoogle, g_user, g_loading, g_error] = useSignInWithGoogle(auth)
@@ -22,28 +26,28 @@ const Login = () => {
 
   useEffect(() => {
     if(g_error) {
-      const gcode = g_error.code
-      if (gcode == 'auth/popup-closed-by-user') {
-        return setError("Something wrog")
+      if (g_error.code == 'auth/popup-closed-by-user') {
+        return setError("")
       }
-        
-      return setError(gcode)
     }
     
     if(e_error) {
-      const ecode = e_error.code
-      if (ecode == 'auth/popup-closed-by-user') {
-        return setError("Something wrog")
-      }
-      
-      if (ecode == 'auth/user-not-found') {
+      if (e_error.code == 'auth/user-not-found') {
         return setError("User is not registered")
+      }
+
+      if (e_error.code == 'auth/wrong-password') {
+        return setError("Invalid password")
       }
     }
 
-    setError('')
-
   }, [g_error, e_error])
+
+  useEffect(() => {
+    if (g_user || e_user) {
+      navigate(from)
+    }
+  }, [e_user, g_user])
   
   const handleGoogleLogin = () => {
     signInWithGoogle()

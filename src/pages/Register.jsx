@@ -24,7 +24,7 @@ const Register = () => {
         return setError('User is already registered. Please login instead')
       }
         
-      return setError(code)
+      return setError('')
     }
 
     setError('')
