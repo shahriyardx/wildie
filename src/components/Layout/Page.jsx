@@ -2,7 +2,7 @@ import React from 'react'
 import Footer from '../../sections/Footer/Footer'
 import Header from '../Header/Header'
 
-const Main = (props) => {
+const Page = (props) => {
   return (
     <div>
         <Header />
@@ -12,4 +12,4 @@ const Main = (props) => {
   )
 }
 
-export default Main
+export default Page

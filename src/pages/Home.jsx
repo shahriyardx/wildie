@@ -1,16 +1,16 @@
 import React from 'react'
 import Banner from '../sections/Banner/Banner'
-import Main from '../components/Layout/Main'
+import Page from '../components/Layout/Page'
 import Services from '../sections/Services/Services'
 import Captures from '../sections/Captures/Captures'
 
 const Home = () => {
   return (
-    <Main>
+    <Page>
       <Banner />
       <Services />
       <Captures />
-    </Main>
+    </Page>
   )
 }
 
