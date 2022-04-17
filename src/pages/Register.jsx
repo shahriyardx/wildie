@@ -6,17 +6,22 @@ import useAuth from '../firebase/useAuth'
 import { ImSpinner2 } from 'react-icons/im'
 
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Banner from '../components/Layout/Banner'
 
 const Register = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const location = useLocation()
+  const navigate = useNavigate()
+  
+  const from = location.state?.from?.pathname || "/"
 
   const auth = useAuth()
   const [signInWithEmailAndPass, user, loading, autherror] = useCreateUserWithEmailAndPassword(auth)
 
   const [error, setError] = useState('')
+  
 
   useEffect(() => {
     if(autherror) {
@@ -32,6 +37,11 @@ const Register = () => {
 
   }, [autherror])
   
+  useEffect(() => {
+    if (user) {
+      navigate(from)
+    }
+  }, [user])
 
   const handleSignUp = (e) => {
     e.preventDefault()

@@ -6,6 +6,7 @@ import Checkout from './pages/Checkout'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import Sucecss from './pages/Sucecss'
 
 function App() {
 
@@ -15,7 +16,8 @@ function App() {
       <Route path="/about" element={<About />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/checkout" element={<RequireAuth><Checkout /></RequireAuth>} />
+      <Route path="/checkout/:serviceId" element={<RequireAuth><Checkout /></RequireAuth>} />
+      <Route path="/success" element={<Sucecss />} />
     </Routes>
   )
 }
