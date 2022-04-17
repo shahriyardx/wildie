@@ -7,6 +7,7 @@ import { ImSpinner2 } from 'react-icons/im'
 
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth'
 import { Link } from 'react-router-dom'
+import Banner from '../components/Layout/Banner'
 
 const Register = () => {
   const [email, setEmail] = useState('')
@@ -44,9 +45,8 @@ const Register = () => {
 
   return (
     <Page>
-      <Container className='py-20'>
-        <h1 className='text-4xl font-bold text-center'>Register</h1>
-
+      <Banner image="/images/register.jpg" text="Register" />
+      <Container className='py-10'>
         <div className='max-w-lg mx-auto'>
           <form onSubmit={handleSignUp}>
             <div className='flex flex-col gap-5'>

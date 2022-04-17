@@ -8,6 +8,7 @@ import { useSignInWithGoogle, useSignInWithEmailAndPassword } from 'react-fireba
 
 import { FcGoogle } from 'react-icons/fc'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import Banner from '../components/Layout/Banner'
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -65,9 +66,8 @@ const Login = () => {
 
   return (
     <Page>
-      <Container className='py-20'>
-        <h1 className='text-4xl font-bold text-center'>Login</h1>
-
+      <Banner image="/images/login.jpg" text="Login" />
+      <Container className='py-10'>
         <div className='max-w-lg mx-auto'>
           <form onSubmit={handleSignInWithEmailPass}>
             <div className='flex flex-col gap-5'>
