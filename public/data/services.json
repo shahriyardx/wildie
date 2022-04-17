@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "name": "Moon",
+    "description": "Lets get started with the minimal pack so you can get the idea.",
+    "features": [
+      "Maximum 20 photos",
+      "Resolution FHD",
+      "Basic lens",
+      "1 location"
+    ],
+    "price": "100",
+    "icon": "🌙"
+  },
+  {
+    "id": 3,
+    "name": "Earth",
+    "description": "Lets get started with the minimal pack so you can get the idea.",
+    "features": [
+      "Maximum 50 photos",
+      "Resolution 2k",
+      "Basic+Wide lens",
+      "2 location"
+    ],
+    "price": "200",
+    "icon": "🌍"
+  },
+  {
+    "id": 2,
+    "name": "Sun",
+    "description": "Lets get started with the minimal pack so you can get the idea.",
+    "features": [
+      "Maximum 100 photos",
+      "Resolution 4k",
+      "Professional lens",
+      "3 location"
+    ],
+    "price": "300",
+    "icon": "🌞"
+  }
+]
