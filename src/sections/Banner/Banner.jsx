@@ -1,6 +1,6 @@
 import React from 'react'
-import Button from '../Button/Button'
-import Container from '../Layout/Container'
+import Button from '../../components/Button/Button'
+import Container from '../../components/Layout/Container'
 
 const Banner = () => {
   return (
