@@ -93,6 +93,7 @@ const Login = () => {
                 {g_loading ? <ImSpinner2 className='animate-spin text-2xl' /> : <><FcGoogle className='text-2xl' /> Google</>}
               </Button>
             </div>
+            <Link className='text-lg text-blue-500' to="/reset">Forgot password?</Link>
 
             <p className='text-red-500 text-lg text-center mt-3'>{error}</p>
           </form>
