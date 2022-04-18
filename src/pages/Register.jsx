@@ -5,7 +5,7 @@ import Page from '../components/Layout/Page'
 import useAuth from '../firebase/useAuth'
 import { ImSpinner2 } from 'react-icons/im'
 
-import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth'
+import { useCreateUserWithEmailAndPassword, useUpdateProfile, useAuthState } from 'react-firebase-hooks/auth'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Banner from '../components/Layout/Banner'
 
@@ -20,12 +20,12 @@ const Register = () => {
   const from = location.state?.from?.pathname || '/'
 
   const auth = useAuth()
-  const [signInWithEmailAndPass, user, loading, authError] = useCreateUserWithEmailAndPassword(auth)
+
+  const [signInWithEmailAndPass, user, loading, authError] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true})
   const [updateProfile, updating, update_error] = useUpdateProfile(auth)
 
   const [error, setError] = useState('')
   
-
   useEffect(() => {
     if(authError) {
       const code = authError.code
@@ -45,6 +45,12 @@ const Register = () => {
 
   }, [authError])
 
+  useEffect(() => {
+    if (user && !updating && !updating) {
+      navigate(from)
+    }
+  }, [user, updating, loading])
+
   const handleSignUp = async (e) => {
     e.preventDefault()
 
@@ -57,11 +63,7 @@ const Register = () => {
     }
 
     await signInWithEmailAndPass(email.trim(), password)
-    
-    if (!authError && user) {
-      await updateProfile({ displayName: name})
-      navigate(from)
-    }
+    await updateProfile({ displayName: name})
   }
 
   return (
