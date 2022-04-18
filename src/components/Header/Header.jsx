@@ -6,6 +6,7 @@ import Profile from '../Profile/Profile'
 import useAuth from '../../firebase/useAuth'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { signOut } from 'firebase/auth'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   const [show, setShow] = useState(false)
@@ -18,7 +19,7 @@ const Header = () => {
     <div>
         <Container className='h-16 flex items-center relative'>
             <div>
-                <img src="/images/logo.png" alt="Wildie Logo" />
+                <Link to="/"><img src="/images/logo.png" alt="Wildie Logo" /></Link>
             </div>
 
             <div 

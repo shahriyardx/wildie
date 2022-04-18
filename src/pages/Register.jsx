@@ -29,6 +29,12 @@ const Register = () => {
       if (code == 'auth/email-already-in-use') {
         return setError('User is already registered. Please login instead')
       }
+
+      if (code == 'auth/weak-password') {
+        return setError('Password is too weak')
+      }
+
+      console.log(code)
         
       return setError('')
     }

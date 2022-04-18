@@ -2,6 +2,7 @@ import React from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import useAuth from './useAuth'
 import { Navigate, useLocation } from 'react-router-dom'
+import Loading from '../pages/Loading'
 
 const RequireAuth = (props) => {
   const auth = useAuth()
@@ -9,7 +10,7 @@ const RequireAuth = (props) => {
   const location = useLocation()
 
   if (loading) {
-    return <p>Loaing..</p>
+    return <Loading />
   }
 
   if (!user) {

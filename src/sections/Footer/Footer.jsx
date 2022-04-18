@@ -2,6 +2,7 @@ import React from 'react'
 import Container from '../../components/Layout/Container'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Button from '../../components/Button/Button';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -16,19 +17,20 @@ const Footer = () => {
 
         <div className='text-center sm:text-left'>
           <h2 className='text-green-600 text-2xl font-bold'>Links</h2>
-          <ul>
-            <li className='text-green-200'>
+          <div className='flex flex-col'>
+            <Link to="/" className='text-green-200'>
               Home
-            </li>
+            </Link>
 
-            <li className='text-green-200'>
+            <Link to="/about" className='text-green-200'>
               About
-            </li>
+            </Link>
 
-            <li className='text-green-200'>
-              Contact Us
-            </li>
-          </ul>
+            <Link to="/blog" className='text-green-200'>
+              Blog
+            </Link>
+
+          </div>
         </div>
 
         <div className='text-center sm:text-left'>

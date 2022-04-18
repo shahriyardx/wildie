@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../../components/Button/Button'
+import { Link } from 'react-router-dom'
 import Container from '../../components/Layout/Container'
 
 const Banner = () => {
@@ -12,7 +12,7 @@ const Banner = () => {
             Capture professional wild life photos to make your moments better. Want yours photos to stand out? Don't hesitate to contact us.
           </p>
           <div className='mt-2'>
-            <Button className='text-base bg-green-800 hover:bg-green-900 uppercase text-green-50 rounded-lg'>Contact Us</Button>
+            <Link to="/about" className='block text-base px-4 py-3 font-semibold bg-green-800 hover:bg-green-900 uppercase text-green-50 rounded-lg'>About Me</Link>
           </div>
         </div>
 
