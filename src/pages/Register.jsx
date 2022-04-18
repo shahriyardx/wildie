@@ -20,17 +20,18 @@ const Register = () => {
   const from = location.state?.from?.pathname || '/'
 
   const auth = useAuth()
-  const [signInWithEmailAndPass, user, loading, autherror] = useCreateUserWithEmailAndPassword(auth)
+  const [signInWithEmailAndPass, user, loading, authError] = useCreateUserWithEmailAndPassword(auth)
   const [updateProfile, updating, update_error] = useUpdateProfile(auth)
 
   const [error, setError] = useState('')
   
 
   useEffect(() => {
-    if(autherror) {
-      const code = autherror.code
+    if(authError) {
+      const code = authError.code
+      console.log(authError.code)
       if (code == 'auth/email-already-in-use') {
-        return setError('User is already registered. Please login instead')
+        return setError('Email is already registered. Please login instead')
       }
 
       if (code == 'auth/weak-password') {
@@ -42,12 +43,12 @@ const Register = () => {
 
     setError('')
 
-  }, [autherror])
+  }, [authError])
 
   const handleSignUp = async (e) => {
     e.preventDefault()
 
-    if(email.trim() == "") {
+    if(email.trim() == "" || name.trim() == "") {
       return setError('Please fill the form correctly')
     }
 
@@ -56,9 +57,11 @@ const Register = () => {
     }
 
     await signInWithEmailAndPass(email.trim(), password)
-    await updateProfile({ displayName: name})
-
-    navigate(from)
+    
+    if (!authError && user) {
+      await updateProfile({ displayName: name})
+      navigate(from)
+    }
   }
 
   return (
