@@ -29,6 +29,7 @@ const Header = () => {
             }>
                 <CustomLink className='w-full py-2 px-3 md:px-0 md:py-0 md:w-auto' to="/">Home</CustomLink>
                 <CustomLink className='w-full py-2 px-3 md:px-0 md:py-0 md:w-auto' to="/about">About</CustomLink>
+                <CustomLink className='w-full py-2 px-3 md:px-0 md:py-0 md:w-auto' to="/blog">Blog</CustomLink>
                 {user 
                   ? <button onClick={() => signOut(auth)} className='text-red-500 font-bold text-xl w-full text-left py-2 px-3 md:px-0 md:py-0 md:w-auto'>Logout</button>
                   : <CustomLink className='w-full py-2 px-3 md:px-0 md:py-0 md:w-auto' to="/login">Login</CustomLink>

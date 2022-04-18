@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1, 
+    "title": "Difference between autorization and authentication.",
+    "description": "Authorization is the process before authentication. When on a perticular website we login using github, google or any third party provider we can decide what kind of data we want to give access to the web app on which we are logging in. And authentication is the next stage when we check if the username and password is valid or not."
+  },
+  {
+    "id": 2, 
+    "title": "Why am I using firebase? What are other options you have to implement authentication?",
+    "description": "The reason I am using firebase is, its very fast and secure, also its made by google. We have various kind of authentication provider like: Auth0, OAuth2, Passport etc. We can also have our custom database to store user's information and implement authentication JWT."
+  },
+  {
+    "id": 3, 
+    "title": "What other services does firebase provide other than authentication?",
+    "description": "Rather than providing authentication it provides us some other usefull things like, firestore which is a NoSQL document based database. It provides storage, Realtime database etc."
+  }
+]
