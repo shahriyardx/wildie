@@ -11,19 +11,18 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Banner from '../components/Layout/Banner'
 
 const Login = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  
+  const auth = useAuth()
   const location = useLocation()
   const navigate = useNavigate()
-
-  const from = location.state?.from?.pathname || "/"
-
-  const auth = useAuth()
+  
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
+  
   const [signInWithGoogle, g_user, g_loading, g_error] = useSignInWithGoogle(auth)
   const [signInWithEmailAndPass, e_user, e_loading, e_error] = useSignInWithEmailAndPassword(auth)
-
-  const [error, setError] = useState('')
+  
+  const from = location.state?.from?.pathname || "/"
 
   useEffect(() => {
     if(g_error) {

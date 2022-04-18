@@ -9,10 +9,12 @@ import useServices from '../hooks/useServices'
 
 const Checkout = () => {
   const services = useServices()
-  const { serviceId }= useParams()
-  const [service, setService] = useState({})
-  const navigate = useNavigate()
   const auth = useAuth()
+  const navigate = useNavigate()
+
+  const { serviceId }= useParams()
+  
+  const [service, setService] = useState({})
   const [user, loading] = useAuthState(auth)
   const [checkout, setCheckout] = useState(null)
   

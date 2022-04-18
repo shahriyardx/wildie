@@ -10,21 +10,20 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Banner from '../components/Layout/Banner'
 
 const Register = () => {
+  const auth = useAuth()
+  const location = useLocation()
+  const navigate = useNavigate()
+
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
-  const location = useLocation()
-  const navigate = useNavigate()
+  const [error, setError] = useState('')
   
   const from = location.state?.from?.pathname || '/'
 
-  const auth = useAuth()
-
   const [signInWithEmailAndPass, user, loading, authError] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true})
   const [updateProfile, updating, update_error] = useUpdateProfile(auth)
-
-  const [error, setError] = useState('')
   
   useEffect(() => {
     if(authError) {
